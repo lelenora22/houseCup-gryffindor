@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="@{/score/create}" method="get" th:object="*${courseSelector}"}"></form>
+<select id="course" th:field="*{courseId}">
+  <option value = "0" disabled>Scegli una classe</option>
+  <option th:each="c : ${courseOptions}" th:value="${c.id}" th:text="${c.name}"></option>
+</select>
+</body>
+</html>
